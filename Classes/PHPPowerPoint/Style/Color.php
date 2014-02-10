@@ -114,6 +114,10 @@ class PHPPowerPoint_Style_Color implements PHPPowerPoint_IComparable
     	$this->_argb = 'FF' . $pValue;
     	return $this;
     }
+    
+    public function getAlpha($pValue = 'FF'){
+      return substr($this->_argb, 0, 2);
+    }
 
 	/**
 	 * Get hash code

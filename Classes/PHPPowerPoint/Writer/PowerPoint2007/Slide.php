@@ -1149,7 +1149,13 @@ class PHPPowerPoint_Writer_PowerPoint2007_Slide extends PHPPowerPoint_Writer_Pow
 		
 			// srgbClr
 			$objWriter->startElement('a:srgbClr');
-			$objWriter->writeAttribute('val', $pFill->getStartColor()->getRGB());
+      $color = $pFill->getStartColor();
+			$objWriter->writeAttribute('val', $color->getRGB());
+      if($color->getAlpha() != 'FF'){
+        $objWriter->startElement('a:alpha');
+        $objWriter->writeAttribute('val', $color->getAlpha() * 1000);
+        $objWriter->endElement();
+      }
 			$objWriter->endElement();
 
 		$objWriter->endElement();
