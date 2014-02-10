@@ -551,6 +551,17 @@ class PHPPowerPoint_Shape_RichText extends PHPPowerPoint_Shape implements PHPPow
     	$this->_topInset = $value;
     	return $this;
     }
+    
+  /**
+   * Set insets
+   */
+  public function setInsets($top = false, $right = false, $bottom = false, $left = false) {
+    $this->_topInset = $top;
+    $this->_rightInset = $right;
+    $this->_bottomInset = $bottom;
+    $this->_leftInset = $left;
+    return $this;
+  }
 
 	/**
 	 * Get hash code

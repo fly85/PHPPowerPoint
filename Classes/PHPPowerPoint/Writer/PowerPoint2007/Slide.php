@@ -480,6 +480,10 @@ class PHPPowerPoint_Writer_PowerPoint2007_Slide extends PHPPowerPoint_Writer_Pow
                 $objWriter->writeAttribute('horzOverflow', $shape->getHorizontalOverflow());
                 $objWriter->writeAttribute('vertOverflow', $shape->getVerticalOverflow());
                 
+        if ($shape->getAnchor()) {
+                $objWriter->writeAttribute('anchor', $shape->getAnchor());
+        }
+                
 				if ($shape->getUpright()) {
                 	$objWriter->writeAttribute('upright', '1');
                 }
@@ -487,10 +491,21 @@ class PHPPowerPoint_Writer_PowerPoint2007_Slide extends PHPPowerPoint_Writer_Pow
                 	$objWriter->writeAttribute('vert', 'vert');
                 }
                 
+        if ($shape->getInsetBottom()) {
                 $objWriter->writeAttribute('bIns', PHPPowerPoint_Shared_Drawing::pixelsToEMU($shape->getInsetBottom()));
-                $objWriter->writeAttribute('lIns', PHPPowerPoint_Shared_Drawing::pixelsToEMU($shape->getInsetLeft()));
-                $objWriter->writeAttribute('rIns', PHPPowerPoint_Shared_Drawing::pixelsToEMU($shape->getInsetRight()));
-                $objWriter->writeAttribute('tIns', PHPPowerPoint_Shared_Drawing::pixelsToEMU($shape->getInsetTop()));
+        }
+        
+        if ($shape->getInsetLeft()) {
+                $objWriter->writeAttribute('bIns', PHPPowerPoint_Shared_Drawing::pixelsToEMU($shape->getInsetLeft()));
+        }
+        
+        if ($shape->getInsetRight()) {
+                $objWriter->writeAttribute('bIns', PHPPowerPoint_Shared_Drawing::pixelsToEMU($shape->getInsetRight()));
+        }
+        
+        if ($shape->getInsetTop()) {
+                $objWriter->writeAttribute('bIns', PHPPowerPoint_Shared_Drawing::pixelsToEMU($shape->getInsetTop()));
+        }
                 
                 $objWriter->writeAttribute('numCol', $shape->getColumns());
 

@@ -104,6 +104,13 @@ abstract class PHPPowerPoint_Shape implements PHPPowerPoint_IComparable
 	 * @var PHPPowerPoint_Shape_Hyperlink
 	 */
 	protected $_hyperlink;
+  
+  /**
+	 * Anchor
+	 * 
+	 * @var string
+	 */
+	protected $_anchor;
 
     /**
      * Create a new PHPPowerPoint_Shape
@@ -120,6 +127,7 @@ abstract class PHPPowerPoint_Shape implements PHPPowerPoint_IComparable
     	$this->_fill				= new PHPPowerPoint_Style_Fill();
     	$this->_border				= new PHPPowerPoint_Style_Border();
     	$this->_shadow				= new PHPPowerPoint_Shape_Shadow();
+      $this->_anchor      = false;
     	
     	$this->_border->setLineStyle(PHPPowerPoint_Style_Border::LINE_NONE);
     }
@@ -342,6 +350,27 @@ abstract class PHPPowerPoint_Shape implements PHPPowerPoint_IComparable
 			$this->_hyperlink = new PHPPowerPoint_Shape_Hyperlink();
 		}
 		return $this->_hyperlink;
+	}
+  
+  /**
+	 * set anchor
+	 *
+	 * @return this
+	 */
+	public function setAnchor($anchor)
+	{
+    $this->_anchor = $anchor;
+		return $this;
+	}
+    
+	/**
+	 * Get Anchor
+	 *
+	 * @return string
+	 */
+	public function getAnchor()
+	{
+		return $this->_anchor;
 	}
 
 	/**
