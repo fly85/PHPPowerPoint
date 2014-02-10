@@ -177,7 +177,7 @@ class PHPPowerPoint_DocumentLayout
      * @param integer $pValue	Layout width
      * @return PHPPowerPoint_DocumentLayout
      */
-    public function setLayoutXmilli(integer $pValue) {
+    public function setLayoutXmilli($pValue) {
 		$this->_cx = $pValue * 36000;
 		$this->_layout = PHPPowerPoint_DocumentLayout::LAYOUT_CUSTOM;
     	return $this;
@@ -188,7 +188,7 @@ class PHPPowerPoint_DocumentLayout
      * @param integer $pValue	Layout height
      * @return PHPPowerPoint_DocumentLayout
      */
-    public function setLayoutYmilli(integer $pValue) {
+    public function setLayoutYmilli($pValue) {
 		$this->_cy = $pValue * 36000;
 		$this->_layout = PHPPowerPoint_DocumentLayout::LAYOUT_CUSTOM;
     	return $this;
