@@ -83,6 +83,13 @@ class PHPPowerPoint_Shape_Table_Cell implements PHPPowerPoint_IComparable
 	 * @var int
 	 */
 	private $_rowSpan = 0;
+  
+  /**
+	 * Vertical text
+	 *
+	 * @var string
+	 */
+  private $_vert = false;
 
     /**
      * Create a new PHPPowerPoint_Shape_RichText instance
@@ -383,6 +390,26 @@ class PHPPowerPoint_Shape_Table_Cell implements PHPPowerPoint_IComparable
     {
     	$this->_rowSpan = $value;
     	return $this;
+    }
+    
+    /**
+     * Get vert
+     *
+     * @return string
+     */
+    public function getVert() {
+      return $this->_vert;
+    }
+
+    /**
+     * Set vert
+     *
+     * @param string $value
+     * @return PHPPowerPoint_Shape_RichText
+     */
+    public function setVert($_vert) {
+      $this->_vert = $_vert;
+      return $this;
     }
 
 	/**
