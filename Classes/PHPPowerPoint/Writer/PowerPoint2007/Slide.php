@@ -490,8 +490,6 @@ class PHPPowerPoint_Writer_PowerPoint2007_Slide extends PHPPowerPoint_Writer_Pow
 
 				if ($shape->getVertical()) {
                 $objWriter->writeAttribute('vert', 'vert');
-        } elseif ($shape->getVert()) {
-                $objWriter->writeAttribute('vert', $shape->getVert());
         }
                 
         if ($shape->getInsetBottom()) {
@@ -744,6 +742,10 @@ class PHPPowerPoint_Writer_PowerPoint2007_Slide extends PHPPowerPoint_Writer_Pow
 						                	{
 						                		$objWriter->writeAttribute('anchor', $horizontalAlign);
 						                	}
+                              
+                              if ($currentCell->getVert()) {
+                                      $objWriter->writeAttribute('vert', $currentCell->getVert());
+                              }
 
 						                	// Determine borders
 						                	$borderLeft = $currentCell->getBorders()->getLeft();
