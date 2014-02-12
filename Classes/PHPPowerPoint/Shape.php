@@ -111,6 +111,13 @@ abstract class PHPPowerPoint_Shape implements PHPPowerPoint_IComparable
 	 * @var string
 	 */
 	protected $_anchor;
+  
+  /**
+	 * Shape
+	 * 
+	 * @var string
+	 */
+	protected $_shape;
 
     /**
      * Create a new PHPPowerPoint_Shape
@@ -128,6 +135,7 @@ abstract class PHPPowerPoint_Shape implements PHPPowerPoint_IComparable
     	$this->_border				= new PHPPowerPoint_Style_Border();
     	$this->_shadow				= new PHPPowerPoint_Shape_Shadow();
       $this->_anchor      = false;
+      $this->_shape       = 'rect';
     	
     	$this->_border->setLineStyle(PHPPowerPoint_Style_Border::LINE_NONE);
     }
@@ -326,6 +334,26 @@ abstract class PHPPowerPoint_Shape implements PHPPowerPoint_IComparable
      */
     public function setShadow(PHPPowerPoint_Shape_Shadow $pValue = null) {
    		$this->_shadow = $pValue;
+   		return $this;
+    }
+    
+    /**
+     * Get Shape
+     *
+     * @return string
+     */
+    public function getShape() {
+    	return $this->_shape;
+    }
+
+    /**
+     * Set Shape
+     *
+     * @param 	string
+     * @return PHPPowerPoint_Shape
+     */
+    public function setShape($pValue) {
+   		$this->_shape = $pValue;
    		return $this;
     }
     

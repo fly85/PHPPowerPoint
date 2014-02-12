@@ -325,7 +325,7 @@ class PHPPowerPoint_Writer_PowerPoint2007_Slide extends PHPPowerPoint_Writer_Pow
 
 				// a:prstGeom
 				$objWriter->startElement('a:prstGeom');
-				$objWriter->writeAttribute('prst', 'rect');
+				$objWriter->writeAttribute('prst', $shape->getShape());
 
 					// a:avLst
 					$objWriter->writeElement('a:avLst', null);
@@ -430,7 +430,7 @@ class PHPPowerPoint_Writer_PowerPoint2007_Slide extends PHPPowerPoint_Writer_Pow
 
 				// a:prstGeom
 				$objWriter->startElement('a:prstGeom');
-				$objWriter->writeAttribute('prst', 'rect');
+				$objWriter->writeAttribute('prst', $shape->getShape());
 				$objWriter->endElement();
 
 				$this->_writeFill($objWriter,$shape->getFill());

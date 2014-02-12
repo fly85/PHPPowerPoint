@@ -46,9 +46,10 @@ class PHPPowerPoint_Shape_Line extends PHPPowerPoint_Shape implements PHPPowerPo
     	$this->getBorder()->setLineStyle(PHPPowerPoint_Style_Border::LINE_SINGLE);
     	
     	$this->setOffsetX($fromX);
-		$this->setOffsetY($fromY);
-		$this->setWidth($toX-$fromX);
-		$this->setHeight($toY-$fromY);
+      $this->setOffsetY($fromY);
+      $this->setWidth($toX-$fromX);
+      $this->setHeight($toY-$fromY);
+      $this->_shape = 'line';
     	
     }
 
