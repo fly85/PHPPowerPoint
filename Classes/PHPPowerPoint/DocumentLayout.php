@@ -193,6 +193,29 @@ class PHPPowerPoint_DocumentLayout
 		$this->_layout = PHPPowerPoint_DocumentLayout::LAYOUT_CUSTOM;
     	return $this;
     }
+    
+    /**
+     * Set Document Layout in millimeters
+     *
+     * @param integer $pValue	Layout width
+     * @return PHPPowerPoint_DocumentLayout
+     */
+    public function setLayoutX($pValue) {
+		$this->_cx = $pValue;
+		$this->_layout = PHPPowerPoint_DocumentLayout::LAYOUT_CUSTOM;
+    	return $this;
+    }
+    /**
+     * Set Document Layout in millimeters
+     *
+     * @param integer $pValue	Layout height
+     * @return PHPPowerPoint_DocumentLayout
+     */
+    public function setLayoutY($pValue) {
+		$this->_cy = $pValue;
+		$this->_layout = PHPPowerPoint_DocumentLayout::LAYOUT_CUSTOM;
+    	return $this;
+    }
 
 	/**
 	 * Implement PHP __clone to create a deep clone, not just a shallow copy.
